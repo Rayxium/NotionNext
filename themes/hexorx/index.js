@@ -33,6 +33,8 @@ import SlotBar from './components/SlotBar'
 import { Transition } from '@headlessui/react'
 import { Style } from './style'
 import replaceSearchResult from '@/components/Mark'
+import Features from "@/themes/landing/components/Features";
+import FeaturesBlocks from "@/themes/landing/components/FeaturesBlocks";
 
 /**
  * 基础布局 采用左右两侧布局，移动端使用顶部导航栏
@@ -123,7 +125,9 @@ const LayoutIndex = (props) => {
  */
 const LayoutPostList = (props) => {
   return <LayoutBase {...props} className='pt-8'>
-        <SlotBar {...props} />
+      <Features />
+      <FeaturesBlocks />
+      <SlotBar {...props} />
         {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
     </LayoutBase>
 }
