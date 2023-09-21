@@ -94,6 +94,8 @@ const LayoutBase = props => {
                         </Transition>
                     </div>
 
+                    {/* 右侧栏 */}
+                    <SideRight {...props} />
                 </div>
             </main>
 
