@@ -35,6 +35,7 @@ import { Style } from './style'
 import replaceSearchResult from '@/components/Mark'
 import Features from "@/themes/landing/components/Features";
 import FeaturesBlocks from "@/themes/landing/components/FeaturesBlocks";
+import Testimonials from "@/themes/landing/components/Testimonials";
 
 /**
  * 基础布局 采用左右两侧布局，移动端使用顶部导航栏
@@ -127,6 +128,7 @@ const LayoutPostList = (props) => {
   return <LayoutBase {...props} className='pt-8'>
       <Features />
       <FeaturesBlocks />
+      <Testimonials />
       <SlotBar {...props} />
         {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
     </LayoutBase>
