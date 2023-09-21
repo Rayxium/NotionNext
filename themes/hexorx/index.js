@@ -33,9 +33,9 @@ import SlotBar from './components/SlotBar'
 import { Transition } from '@headlessui/react'
 import { Style } from './style'
 import replaceSearchResult from '@/components/Mark'
-import Features from "@/themes/landing/components/Features";
-import FeaturesBlocks from "@/themes/landing/components/FeaturesBlocks";
-import Testimonials from "@/themes/landing/components/Testimonials";
+import Features from "./components/Features";
+import FeaturesBlocks from "./components/FeaturesBlocks";
+import Testimonials from "./components/Testimonials";
 
 /**
  * 基础布局 采用左右两侧布局，移动端使用顶部导航栏
