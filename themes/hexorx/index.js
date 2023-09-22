@@ -71,6 +71,8 @@ const LayoutBase = props => {
                 {headerSlot}
             </Transition>
 
+            <Features />
+
             {/* 主区块 */}
             <main id="wrapper" className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
                 <div id="container-inner" className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
@@ -127,9 +129,11 @@ const LayoutIndex = (props) => {
  */
 const LayoutPostList = (props) => {
   return <LayoutBase {...props} className='pt-8'>
-      <Features />
-      <FeaturesBlocks />
-      <Testimonials />
+      {
+      //<Features />
+      //<FeaturesBlocks />
+      //<Testimonials />
+      }
       <SlotBar {...props} />
         {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
     </LayoutBase>
