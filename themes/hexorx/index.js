@@ -71,7 +71,9 @@ const LayoutBase = props => {
                 {headerSlot}
             </Transition>
 
-            <Features />
+            {
+                //<Features />
+            }
 
             {/* 主区块 */}
             <main id="wrapper" className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
