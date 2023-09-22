@@ -112,6 +112,75 @@ const LayoutBase = props => {
         </div>
   )
 }
+const LayoutBaseRX = props => {
+  const { children, headerSlot, floatSlot, slotTop, meta, siteInfo, className } = props
+  const { onLoading } = useGlobal()
+
+  return (
+        <div id='theme-hexo'>
+            {/* 网页SEO */}
+            <CommonHead meta={meta}/>
+            <Style/>
+
+            {/* 顶部导航 */}
+            <TopNav {...props} />
+
+            {/* 顶部嵌入 */}
+            <Transition
+                show={!onLoading}
+                appear={true}
+                enter="transition ease-in-out duration-700 transform order-first"
+                enterFrom="opacity-0 -translate-y-16"
+                enterTo="opacity-100"
+                leave="transition ease-in-out duration-300 transform"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0 translate-y-16"
+                unmount={false}
+            >
+                {headerSlot}
+            </Transition>
+
+            {
+                <Features />
+            }
+
+            {/* 主区块 */}
+            <main id="wrapper" className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
+                <div id="container-inner" className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
+                    <div className={`${className || ''} w-full max-w-4xl h-full overflow-hidden`}>
+
+                        <Transition
+                            show={!onLoading}
+                            appear={true}
+                            enter="transition ease-in-out duration-700 transform order-first"
+                            enterFrom="opacity-0 translate-y-16"
+                            enterTo="opacity-100"
+                            leave="transition ease-in-out duration-300 transform"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 -translate-y-16"
+                            unmount={false}
+                        >
+                            {/* 主区上部嵌入 */}
+                            {slotTop}
+
+                            {children}
+                        </Transition>
+                    </div>
+
+                    {/* 右侧栏 */}
+                    {//<SideRight {...props} />
+                    }
+                </div>
+            </main>
+
+            {/* 悬浮菜单 */}
+            <RightFloatArea floatSlot={floatSlot} />
+
+            {/* 页脚 */}
+            <Footer title={siteInfo?.title || BLOG.TITLE} />
+        </div>
+  )
+}
 
 /**
  * 首页
@@ -121,7 +190,7 @@ const LayoutBase = props => {
  */
 const LayoutIndex = (props) => {
   const headerSlot = CONFIG.HOME_BANNER_ENABLE && <Hero {...props} />
-  return <LayoutPostList {...props} headerSlot={headerSlot} className='pt-8' />
+  return <LayoutPostListRX {...props} headerSlot={headerSlot} className='pt-8' />
 }
 
 /**
@@ -139,6 +208,17 @@ const LayoutPostList = (props) => {
       <SlotBar {...props} />
         {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
     </LayoutBase>
+}
+const LayoutPostListRX = (props) => {
+  return <LayoutBaseRX {...props} className='pt-8'>
+      {
+      //<Features />
+      //<FeaturesBlocks />
+      //<Testimonials />
+      }
+      <SlotBar {...props} />
+        {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+    </LayoutBaseRX>
 }
 
 /**
