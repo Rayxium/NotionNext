@@ -436,5 +436,6 @@ export {
   Layout404,
   LayoutCategoryIndex,
   LayoutPostList,
+  LayoutPostListRX,
   LayoutTagIndex
 }
