@@ -44,7 +44,7 @@ const Hero = props => {
 
   function updateHeaderHeight() {
     requestAnimationFrame(() => {
-      const wrapperElement = document.getElementById('wrapper')
+      const wrapperElement = document.getElementById('RX')
       wrapperTop = wrapperElement?.offsetTop
     })
   }
