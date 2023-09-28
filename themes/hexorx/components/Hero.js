@@ -58,7 +58,7 @@ const Hero = props => {
             {
                 // 如果刪掉首頁三按鍵 top-10改-5
             }
-            <div className="text-white absolute top-10 flex flex-col h-full items-center justify-center w-full ">
+            <div className="text-white absolute top-5 flex flex-col h-full items-center justify-center w-full ">
                 {/* 站点标题 */}
                 <div className='font-black text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div>
                 {/* 站点欢迎语 */}

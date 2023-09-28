@@ -15,7 +15,7 @@ const NavButtonGroup = (props) => {
 
   return (
     <nav id='home-nav-button' className={'w-full z-10 md:h-30 md:mt-6 xl:mt-4 px-5 py-4 mt-4 flex flex-wrap md:max-w-6xl space-y-2 md:space-y-0 md:flex justify-center max-h-80 overflow-auto'}>
-      {categoryOptions.map(category => {
+      {/*categoryOptions.map(category => {
         return (
           <Link
             key={`${category.name}`}
@@ -26,7 +26,7 @@ const NavButtonGroup = (props) => {
                {category.name}
             </Link>
         )
-      })}
+      })*/}
     </nav>
   )
 }
