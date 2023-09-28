@@ -55,6 +55,9 @@ const Hero = props => {
             className="w-full h-screen relative bg-black"
         >
 
+            {
+                // 如果刪掉首頁三按鍵 top-10改-5
+            }
             <div className="text-white absolute top-10 flex flex-col h-full items-center justify-center w-full ">
                 {/* 站点标题 */}
                 <div className='font-black text-4xl md:text-5xl shadow-text'>{siteInfo?.title}</div>
@@ -71,7 +74,7 @@ const Hero = props => {
                 {CONFIG.HOME_NAV_BUTTONS && <NavButtonGroup {...props} />}
 
                 {/* 滚动按钮 */}
-                <div onClick={scrollToWrapper} className="z-10 cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white">
+                <div onClick={scrollToWrapper} className="z-10 cursor-pointer w-full text-center py-4 text-3xl relative top-0 text-white">
                     <div className="opacity-70 animate-bounce text-xs">{CONFIG.SHOW_START_READING && locale.COMMON.START_READING}</div>
                     <i className='opacity-70 animate-bounce fas fa-angle-down' />
                 </div>
